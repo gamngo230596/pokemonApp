@@ -4,9 +4,15 @@
             <img [src]="data.image" alt="image">
         </div>
         <div class="details">
-            <div class="pokemon-name">{{data.name}}</div>
+            <div class="pokemon-name">{{data.name | transformLanguage: currentLanguage : data.id | async}}</div>
             <div class="pokemon-height">Height: {{data.height}}</div>
             <div class="pokemon-weight">Weight: {{data.weight}}</div>
+            <div class="species">
+                <p> Color: {{getColor()}} </p>
+                <p> Flavor: {{getFlavor()}} </p>
+                <p> Genera: {{getGenera()}} </p>   
+                
+            </div>
         </div>
     </div>
 </div>
