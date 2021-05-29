@@ -20,6 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CollectionsComponent } from './collections/collections.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import { TransformLanguagePipe } from './transform-language.pipe';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     PokemonDialogComponent,
     CollectionsComponent,
+    TransformLanguagePipe,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MatPaginatorModule,
     MatSlideToggleModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [
     PokemonDialogComponent

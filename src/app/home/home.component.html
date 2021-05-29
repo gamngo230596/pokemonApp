@@ -15,7 +15,7 @@
     <ng-container *ngFor="let item of pokemonList">
       <div class="wrapper" (click)="openDialog(item)">
         <img [src]="item.image">
-        <div>{{item.name}}</div>
+        <div>{{item.name | transformLanguage: currentLanguage : item.id | async}}</div>
       </div>
     </ng-container>
   </div>

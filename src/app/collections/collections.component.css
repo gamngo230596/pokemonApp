@@ -42,3 +42,11 @@
 .search-form > div {
     width: 300px;
 }
+
+.spinner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: calc(100vh - 300px);
+}

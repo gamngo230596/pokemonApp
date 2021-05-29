@@ -1,19 +1,21 @@
+import { LanguageService } from './../language.service';
 import { CommonService } from './../common.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { forkJoin } from 'rxjs/internal/observable/forkJoin';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PokemonDialogComponent } from '../pokemon-dialog/pokemon-dialog.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   videoTrailerUrl: string[] = [
     'https://youtu.be/D0zYJ1RQ-fs',
@@ -57,9 +59,14 @@ export class HomeComponent implements OnInit {
 
   limitPerPage: number = 10;
 
+  subscription: Subscription[] = [];
+
+  currentLanguage: string = 'en';
+
   constructor(
     private _sanitizer: DomSanitizer,
     private commonService: CommonService,
+    private languageService: LanguageService,
     public dialog: MatDialog
   ) { 
     this.safeURL = this.videoTrailerUrl.map(url => {
@@ -67,9 +74,21 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  ngOnDestroy(): void {
+    this.subscription.forEach((sub: Subscription) => {
+      if (sub) {
+        sub.unsubscribe();
+      }
+    });
+  }
+
   ngOnInit(): void {
     this.getPokemonList();
     this.getItemList();
+    this.currentLanguage = this.languageService.getDefaultLanguage;
+    this.subscription.push(this.languageService.changLanguage$.subscribe(() => {
+      this.currentLanguage = this.languageService.getDefaultLanguage;
+    }));
   }
 
   getMoreList() {
