@@ -1,6 +1,6 @@
 import { CommonService } from './../common.service';
 import { Component, OnInit } from '@angular/core';
-import { forkJoin } from 'rxjs/internal/observable/forkJoin';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-navigator',

@@ -1,12 +1,11 @@
 import { LanguageService } from './../language.service';
 import { CommonService } from './../common.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { switchMap } from 'rxjs/internal/operators/switchMap';
-import { Observable } from 'rxjs/internal/Observable';
-import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 import { PokemonDialogComponent } from '../pokemon-dialog/pokemon-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs/internal/Subscription';
+import { forkJoin, Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-collections',

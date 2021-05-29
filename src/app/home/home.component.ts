@@ -3,12 +3,10 @@ import { CommonService } from './../common.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 import { map, switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs/internal/Observable';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PokemonDialogComponent } from '../pokemon-dialog/pokemon-dialog.component';
-import { Subscription } from 'rxjs';
+import { forkJoin, Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',

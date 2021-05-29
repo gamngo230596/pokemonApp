@@ -1,8 +1,7 @@
-import { Observable } from 'rxjs/internal/Observable';
 import { CommonService } from './common.service';
 import { Pipe, PipeTransform } from '@angular/core';
-import { map } from 'rxjs/internal/operators/map';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Pipe({
   name: 'transformLanguage'
