@@ -1,0 +1,24 @@
+<div class="collections" id="collections">
+    <div class="search-form">
+        <div class="d-flex">
+          <input class="form-control me-2" [(ngModel)]="keySearch" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="button" (click)="onSubmit()">Search</button>
+        </div>
+    </div>
+    <div class="pokemon-list">
+        <ng-container *ngFor="let item of pokemonList">
+          <div class="wrapper" (click)="openDialog(item)">
+            <img [src]="item.image">
+            <div>{{item.name}}</div>
+          </div>
+        </ng-container>
+        <div class="pagination">
+            <mat-paginator [length]="100"
+                  [pageSize]="pageSize"
+                  [pageIndex]="pageIndex"
+                  [pageSizeOptions]="[10, 20, 50, 100]"
+                  (page)="handlePage($event)">
+            </mat-paginator>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,52 @@
+.pokemon-list, .item-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemon-list .wrapper, .item-list .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 10%;
+    align-items: center;
+}
+
+.pokemon-list .wrapper {
+    cursor: pointer;
+}
+
+.pokemon-list .wrapper > img {
+    width: 100px;
+}
+
+.pokemon-list .wrapper> div, .item-list .wrapper > div {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.see-more {
+    text-align: right;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+    .pokemon-list .wrapper {
+        flex: 1 0 50%;
+    }
+
+    .item-list .wrapper {
+        flex: 1 0 25%;
+    }
+}

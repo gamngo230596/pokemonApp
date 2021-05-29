@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokemonApp';
+
+  gotoTop() {
+    const top: HTMLElement | null = document.getElementById('trailer') || document.getElementById('collections');
+    if (top) {
+      top.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

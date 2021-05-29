@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .image img {
+    width: 250px;
+}
+.wrapper .details {
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.wrapper .details .pokemon-name {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.wrapper .details div {
+    margin-top: 10px;
+}

@@ -1,0 +1,19 @@
+
+.sidenav {
+    width: 200px;
+}
+
+.sidenav-content {
+    margin: 20px 0;
+}
+
+::ng-deep .mat-drawer-content {
+    height: calc(100vh - 128px)!important;
+}
+
+.goto {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    z-index: 10;
+}

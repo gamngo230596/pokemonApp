@@ -1,0 +1,35 @@
+<section id="trailer">
+  <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let item of safeURL; let i = index">
+        <div class="slide">
+          <iframe [src]="item" frameborder="0" allowfullscreen class="d-block"></iframe>
+        </div>
+      </ng-template>
+  </owl-carousel-o>
+</section>
+<section id="pokemons">
+  <div class="see-more">
+    <button class="btn btn-default btn-primary" (click)="getMoreList()">See more</button>
+  </div>
+  <div class="pokemon-list">
+    <ng-container *ngFor="let item of pokemonList">
+      <div class="wrapper" (click)="openDialog(item)">
+        <img [src]="item.image">
+        <div>{{item.name}}</div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+
+<section id="items">
+  <div class="item-list">
+    <ng-container *ngFor="let item of itemList">
+      <div class="wrapper">
+        <div class="image">
+          <img [src]="item.sprites.default">
+        </div>
+        <div>{{item.name}}</div>
+      </div>
+    </ng-container>
+  </div>
+</section>

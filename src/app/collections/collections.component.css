@@ -1,0 +1,44 @@
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemon-list .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 20%;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.pokemon-list .wrapper {
+    cursor: pointer;
+}
+
+.pokemon-list .wrapper > img {
+    width: 100px;
+}
+
+.pokemon-list .wrapper> div {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.pagination {
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.search-form {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.search-form > div {
+    width: 300px;
+}
