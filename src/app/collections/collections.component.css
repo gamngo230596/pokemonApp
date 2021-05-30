@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-.pokemon-list .wrapper > img {
+.pokemon-list .wrapper img {
     width: 100px;
 }
 
@@ -49,4 +49,10 @@
     width: 100%;
     justify-content: center;
     height: calc(100vh - 300px);
+}
+
+@media screen and (max-width: 768px) {
+    .pokemon-list .wrapper {
+        flex: 1 0 25%;
+    }
 }

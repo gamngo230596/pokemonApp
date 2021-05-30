@@ -1,4 +1,7 @@
 <section id="trailer">
+  <h2 class="section-title text-center">
+    Trailer
+  </h2>
   <owl-carousel-o [options]="customOptions">
       <ng-template carouselSlide *ngFor="let item of safeURL; let i = index">
         <div class="slide">
@@ -8,6 +11,9 @@
   </owl-carousel-o>
 </section>
 <section id="pokemons">
+  <h2 class="section-title text-center">
+    Pokemons
+  </h2>
   <div class="see-more">
     <button class="btn btn-default btn-primary" (click)="getMoreList()">See more</button>
   </div>
@@ -22,6 +28,9 @@
 </section>
 
 <section id="items">
+  <h2 class="section-title text-center">
+    Items
+  </h2>
   <div class="item-list">
     <ng-container *ngFor="let item of itemList">
       <div class="wrapper">
